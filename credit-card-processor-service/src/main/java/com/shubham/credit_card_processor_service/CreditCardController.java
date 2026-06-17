@@ -1,8 +1,9 @@
 package com.shubham.credit_card_processor_service;
 
+import com.shubham.core.dto.CreditCardProcessRequest;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,8 +15,13 @@ public class CreditCardController {
 
     @PostMapping("/process")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public void processCreditCard(@RequestBodyrequest @Valid CreditCardProcessRequest request){
+    public void processCreditCard(@RequestBody @Valid CreditCardProcessRequest request){
         LOGGER.info("Processing request : {}",request);
+    }
+
+    @GetMapping("creditCardTest")
+    public String creditCardServiceTest(){
+        return "working";
     }
 
 }

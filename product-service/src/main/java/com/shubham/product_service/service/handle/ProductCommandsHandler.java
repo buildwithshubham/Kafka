@@ -1,11 +1,13 @@
-package com.shubham.product_service.service;
+package com.shubham.product_service.service.handle;
 
 import com.shubham.core.dto.Product;
 import com.shubham.core.dto.commands.ReservedProduvtCommand;
 import com.shubham.core.dto.event.ProductReservationEvent;
 import com.shubham.core.dto.event.ProductReservationFailedEvents;
+import com.shubham.product_service.service.ProductService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -15,13 +17,15 @@ import org.springframework.stereotype.Component;
 @Component
 @KafkaListener(topics = "${products.commands.topic.name}")
 public class ProductCommandsHandler {
-    private final Logger logger = LoggerFactory.getLogger(this.getClass());
     private final ProductService productService;
+    private final Logger logger = LoggerFactory.getLogger(ProductCommandsHandler.class);
+
     private final KafkaTemplate<String,Object> kafkaTemplate;
     private final String productEventTopicName;
 
-
-    public ProductCommandsHandler(ProductService productService, KafkaTemplate<String, Object> kafkaTemplate, String productEventTopicName) {
+    public ProductCommandsHandler(ProductService productService,
+                                  KafkaTemplate<String, Object> kafkaTemplate,
+                                  @Value("${product.events.topic.name}") String productEventTopicName) {
         this.productService = productService;
         this.kafkaTemplate = kafkaTemplate;
         this.productEventTopicName = productEventTopicName;

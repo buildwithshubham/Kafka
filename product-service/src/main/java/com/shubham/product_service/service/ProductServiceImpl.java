@@ -5,11 +5,13 @@ import com.shubham.core.exception.ProductInsufficientQuantityException;
 import com.shubham.product_service.dao.jpa.entity.ProductEntity;
 import com.shubham.product_service.dao.jpa.repository.ProductRepository;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+@Service
 public class ProductServiceImpl implements ProductService{
     private final ProductRepository productRepository;
 

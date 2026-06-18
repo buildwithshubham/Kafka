@@ -9,6 +9,9 @@ public class Product {
     private BigDecimal price;
     private Integer qunaltity;
 
+    public Product() {
+    }
+
     public Product(UUID id, String name, BigDecimal price, Integer qunaltity) {
         this.id = id;
         this.name = name;

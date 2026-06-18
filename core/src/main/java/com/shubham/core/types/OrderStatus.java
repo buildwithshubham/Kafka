@@ -1,4 +1,7 @@
 package com.shubham.core.types;
 
-public class OrderStatus {
+public enum OrderStatus {
+    CREATED,
+    APPROVED,
+    REJECTED
 }

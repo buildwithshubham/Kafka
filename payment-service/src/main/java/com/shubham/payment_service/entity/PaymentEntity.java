@@ -1,25 +1,29 @@
-package com.shubham.core.dto;
+package com.shubham.payment_service.entity;
 
-import com.shubham.core.types.OrderStatus;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
-public class Order{
+@Table
+@Entity
+public class PaymentEntity {
+    private UUID id;
     private UUID orderId;
-    private UUID customerId;
     private UUID productId;
+    private BigDecimal productPrice;
     private Integer productQuantity;
-    private OrderStatus status;
 
-    public Order(UUID orderId, UUID customerId, UUID productId, Integer productQuantity, OrderStatus status) {
-        this.orderId = orderId;
-        this.customerId = customerId;
-        this.productId = productId;
-        this.productQuantity = productQuantity;
-        this.status = status;
+    public PaymentEntity() {
     }
 
-    public Order() {
+    public PaymentEntity(UUID id, UUID orderId, UUID productId, BigDecimal productPrice, Integer productQuantity) {
+        this.id = id;
+        this.orderId = orderId;
+        this.productId = productId;
+        this.productPrice = productPrice;
+        this.productQuantity = productQuantity;
     }
 
     public UUID getOrderId() {
@@ -30,20 +34,20 @@ public class Order{
         this.orderId = orderId;
     }
 
-    public UUID getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(UUID customerId) {
-        this.customerId = customerId;
-    }
-
     public UUID getProductId() {
         return productId;
     }
 
     public void setProductId(UUID productId) {
         this.productId = productId;
+    }
+
+    public BigDecimal getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(BigDecimal productPrice) {
+        this.productPrice = productPrice;
     }
 
     public Integer getProductQuantity() {
@@ -54,11 +58,11 @@ public class Order{
         this.productQuantity = productQuantity;
     }
 
-    public OrderStatus getStatus() {
-        return status;
+    public UUID getId() {
+        return id;
     }
 
-    public void setStatus(OrderStatus status) {
-        this.status = status;
+    public void setId(UUID id) {
+        this.id = id;
     }
 }

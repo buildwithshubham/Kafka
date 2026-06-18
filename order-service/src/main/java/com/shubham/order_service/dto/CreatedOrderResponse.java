@@ -1,25 +1,25 @@
-package com.shubham.core.dto;
+package com.shubham.order_service.dto;
 
 import com.shubham.core.types.OrderStatus;
 
 import java.util.UUID;
 
-public class Order{
+public class CreatedOrderResponse{
     private UUID orderId;
     private UUID customerId;
     private UUID productId;
     private Integer productQuantity;
     private OrderStatus status;
 
-    public Order(UUID orderId, UUID customerId, UUID productId, Integer productQuantity, OrderStatus status) {
-        this.orderId = orderId;
+    public CreatedOrderResponse() {
+    }
+
+    public CreatedOrderResponse(UUID customerId, UUID orderId, UUID productId, Integer productQuantity, OrderStatus status) {
         this.customerId = customerId;
+        this.orderId = orderId;
         this.productId = productId;
         this.productQuantity = productQuantity;
         this.status = status;
-    }
-
-    public Order() {
     }
 
     public UUID getOrderId() {

@@ -28,7 +28,7 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public Product reserve(Product desiredProduct, UUID orderID) {
-        ProductEntity productEntity = productRepository.findAllById(desiredProduct.getId().orElseThrow());
+        ProductEntity productEntity = productRepository.findById(desiredProduct.getId()).orElseThrow();
         if(desiredProduct.getQunaltity() > productEntity.getQuantity()){
             throw new ProductInsufficientQuantityException(productEntity.getId(),orderID);
         }

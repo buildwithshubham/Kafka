@@ -1,0 +1,10 @@
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\config\KafkaConfig.java
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\dao\jpa\entity\ProductEntity.java
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\dao\jpa\repository\ProductRepository.java
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\dto\ProductCreationRequest.java
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\dto\ProductCreationResponse.java
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\ProductServiceApplication.java
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\service\handle\ProductCommandsHandler.java
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\service\ProductService.java
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\service\ProductServiceImpl.java
+C:\Users\Swati\Downloads\saga-pattern-spring-boot\product-service\src\main\java\com\shubham\product_service\web\controller\ProductController.java

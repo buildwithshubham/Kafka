@@ -1,0 +1,10 @@
+com\shubham\product_service\service\handle\ProductCommandsHandler.class
+com\shubham\product_service\dao\jpa\repository\ProductRepository.class
+com\shubham\product_service\dto\ProductCreationRequest.class
+com\shubham\product_service\web\controller\ProductController.class
+com\shubham\product_service\ProductServiceApplication.class
+com\shubham\product_service\config\KafkaConfig.class
+com\shubham\product_service\dto\ProductCreationResponse.class
+com\shubham\product_service\service\ProductService.class
+com\shubham\product_service\dao\jpa\entity\ProductEntity.class
+com\shubham\product_service\service\ProductServiceImpl.class

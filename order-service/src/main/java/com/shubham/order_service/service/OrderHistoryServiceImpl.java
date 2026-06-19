@@ -25,15 +25,15 @@ public class OrderHistoryServiceImpl implements OrderHistoryService {
     @Override
     public void add(UUID orderId, OrderStatus orderStatus) {
         OrderHistoryEntity entity = new OrderHistoryEntity();
-        entity.setOrder_id(orderId);
+        entity.setOrderId(orderId);
         entity.setStatus(orderStatus);
-        entity.setCreated_at(new Timestamp(new Date().getTime()));
+        entity.setCreatedAt(new Timestamp(new Date().getTime()));
 
     }
 
     @Override
     public List<OrderHistory> findByOrderId(UUID orderId) {
-        var entities = orderHistoryRepository.findBYOrderId(orderId);
+        var entities = orderHistoryRepository.findByOrderId(orderId);
         return entities.stream()
                 .map(entity ->{
                     OrderHistory orderHistory = new OrderHistory();

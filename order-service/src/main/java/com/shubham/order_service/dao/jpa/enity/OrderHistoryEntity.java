@@ -13,18 +13,27 @@ public class OrderHistoryEntity {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @Column(name = "order_id")
-    private UUID order_id;
+    private UUID orderId;
     @Column(name = "status")
     private OrderStatus status;
-    @Column(name = "created_at")
-    private Timestamp created_at;
 
-    public UUID getOrder_id() {
-        return order_id;
+    @Column(name = "created_at")
+    private Timestamp createdAt;
+
+    public UUID getId() {
+        return id;
     }
 
-    public void setOrder_id(UUID order_id) {
-        this.order_id = order_id;
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public UUID getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(UUID orderId) {
+        this.orderId = orderId;
     }
 
     public OrderStatus getStatus() {
@@ -35,11 +44,11 @@ public class OrderHistoryEntity {
         this.status = status;
     }
 
-    public Timestamp getCreated_at() {
-        return created_at;
+    public Timestamp getCreatedAt() {
+        return createdAt;
     }
 
-    public void setCreated_at(Timestamp created_at) {
-        this.created_at = created_at;
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
     }
 }

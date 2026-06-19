@@ -8,7 +8,6 @@ import com.shubham.core.dto.event.OrderCreatedEvent;
 import com.shubham.core.dto.event.PaymentProcessedEvents;
 import com.shubham.core.dto.event.ProductReservationEvent;
 import com.shubham.core.types.OrderStatus;
-import com.shubham.order_service.dto.OrderHistory;
 import com.shubham.order_service.service.OrderHistoryService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaHandler;
@@ -31,7 +30,7 @@ public class OrderSaga {
     private final String ordersCommandsTopicName;
 
     public OrderSaga(KafkaTemplate<String,Object> kafkaTemplate,
-                     @Value("$product.commands.topic.name")
+                     @Value("${product.commands.topic.name}")
                      String productsCommandsTopicName,
                      OrderHistoryService orderHistoryService,
                      @Value("${payments.commands.topic.name}")

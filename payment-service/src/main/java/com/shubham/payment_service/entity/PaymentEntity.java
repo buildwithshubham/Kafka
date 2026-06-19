@@ -1,6 +1,7 @@
 package com.shubham.payment_service.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
@@ -9,6 +10,7 @@ import java.util.UUID;
 @Table
 @Entity
 public class PaymentEntity {
+    @Id
     private UUID id;
     private UUID orderId;
     private UUID productId;
